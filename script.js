@@ -14,3 +14,9 @@ let taskArray = getTasksFromLocalStorage()
  function updateTasksInLocalStorage() {
    localStorage.setItem("tasks", JSON.stringify(taskArray))
  }
+
+//  3.3 Implement createTask(taskText) function
+
+ function createTask(taskText){
+   return {text: "taskText", completed: "false"}
+ }
