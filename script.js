@@ -20,3 +20,10 @@ let taskArray = getTasksFromLocalStorage()
  function createTask(taskText){
    return {text: "taskText", completed: "false"}
  }
+
+//  3.4 Implement deleteTask(index) function
+
+function deleteTask(index) {
+   taskArray.splice(index, 1) ; 
+   updateTasksInLocalStorage()
+}
