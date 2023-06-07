@@ -85,7 +85,7 @@ function deleteTask(index) {
       // const taskElement = renderTasks()
       taskList.appendChild(taskElement)
     }
-
+// 5. Attach event listener to add task button
     addTaskButton.addEventListener("click" , function(){
       const taskText = taskInput.value
       if(taskText === "") {
@@ -97,3 +97,5 @@ function deleteTask(index) {
       taskInput.value = ""
       renderTasks()
     })
+   
+   renderTasks()
