@@ -75,3 +75,12 @@ function deleteTask(index) {
     
       return taskItem;
     }
+
+    function renderTasks() {
+      taskList.innerHTML = ""
+      for (i=0; i < taskArray.length; i++) {
+         return createTaskElement(taskArray[i])
+      }
+      const taskElement = renderTasks()
+      taskList.appendChild(taskElement)
+    }
