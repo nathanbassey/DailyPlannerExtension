@@ -18,7 +18,7 @@ let taskArray = getTasksFromLocalStorage()
 //  3.3 Implement createTask(taskText) function
 
  function createTask(taskText){
-   return {text: "taskText", completed: "false"}
+   return {text: taskText, completed: false}
  }
 
 //  3.4 Implement deleteTask(index) function
@@ -76,20 +76,21 @@ function deleteTask(index) {
       return taskItem;
     }
 
-    //4. Implement render Tasks Function
+//4. Implement render Tasks Function
     function renderTasks() {
       taskList.innerHTML = ""
       for (i=0; i < taskArray.length; i++) {
          const taskElement = createTaskElement(taskArray[i])
+         taskList.appendChild(taskElement)
       }
       // const taskElement = renderTasks()
-      taskList.appendChild(taskElement)
+      
     }
 // 5. Attach event listener to add task button
     addTaskButton.addEventListener("click" , function(){
-      const taskText = taskInput.value
+      const taskText = taskInput.value.trim()
       if(taskText === "") {
-         return;
+         return taskText;
       }
       const newTask = createTask(taskText)
       taskArray.push(newTask)
@@ -97,5 +98,5 @@ function deleteTask(index) {
       taskInput.value = ""
       renderTasks()
     })
-   
    renderTasks()
+   
