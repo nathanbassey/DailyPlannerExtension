@@ -76,11 +76,24 @@ function deleteTask(index) {
       return taskItem;
     }
 
+    //4. Implement render Tasks Function
     function renderTasks() {
       taskList.innerHTML = ""
       for (i=0; i < taskArray.length; i++) {
-         return createTaskElement(taskArray[i])
+         const taskElement = createTaskElement(taskArray[i])
       }
-      const taskElement = renderTasks()
+      // const taskElement = renderTasks()
       taskList.appendChild(taskElement)
     }
+
+    addTaskButton.addEventListener("click" , function(){
+      const taskText = taskInput.value
+      if(taskText === "") {
+         return;
+      }
+      const newTask = createTask(taskText)
+      taskArray.push(newTask)
+      updateTasksInLocalStorage()
+      taskInput.value = ""
+      renderTasks()
+    })
